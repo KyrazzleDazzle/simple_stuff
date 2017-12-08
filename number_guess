@@ -1,0 +1,26 @@
+# This is a number guess game. We'll generate a random number between 0 and 100
+# and the user inputs guesses. User has 10 turns to guess, and after the 10th
+# the game is over.
+
+from random import randint
+
+secret_number = randint(0,100)
+# note: need to start with guess = -1 to start up while loop
+guess = -1
+
+while secret_number is not guess:
+    for turn in range(10):
+        print "Turn ", turn + 1
+        guess = int(raw_input("Pick a number: "))
+        if guess < secret_number:
+            print "your guess is low"
+        elif guess > secret_number:
+            print "your guess is high"
+        else:
+            print "you guessed right!"
+            break
+        if turn == 9:
+        # turn = 10, but starts at 0
+            print "Game over, loser"
+            print "The number was ", secret_number
+            secret_number = guess
