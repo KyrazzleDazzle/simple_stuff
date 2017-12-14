@@ -1,0 +1,18 @@
+# Adding numbers together
+# function takes a multiple digit number and adds the digits together
+
+def digit_sum(n):
+  sum = 0
+  orig = n
+  for i in str(n):
+    digit = orig % 10
+    sum = sum + digit
+    new_orig = orig // 10
+    orig = new_orig
+  return sum
+
+print digit_sum(5436)
+
+# I tried to put an if/else in the function
+# but am getting an indent block error for like 8
+# and i'm not sure why
